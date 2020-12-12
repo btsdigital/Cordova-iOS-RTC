@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'CordovaRTC'
-  s.version               = '1.0.3'
+  s.version               = '1.0.4'
   s.summary               = 'CordovaRTC plugin'
   s.description           = <<-DESC
 CordovaRTC cordova plugin for iOS
@@ -12,6 +12,8 @@ CordovaRTC cordova plugin for iOS
   s.source_files          = 'CordovaRTC/*.{h,m,swift}'
   s.dependency              'Cordova'
   s.vendored_frameworks   = 'CordovaRTC/WebRTC.framework'
+  s.user_target_xcconfig  = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.pod_target_xcconfig   = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.ios.deployment_target = '11.0'
   s.swift_version         = '4.2'
 end
